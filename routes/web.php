@@ -29,7 +29,6 @@ Route::get('product/{id}/{product}', 'ProductController@index');
 
 
 Route::get('auth', 'AuthController@index');
-
 Route::post('auth/login', 'Auth\LoginController@login');
 Route::get('auth/logout', 'Auth\LoginController@logout');
 Route::post('auth/register', 'Auth\RegisterController@register');
