@@ -18,18 +18,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-1">
-                    <div class="login-form"><!--login form-->
-                        <h2>Войдите в ваш аккаунт</h2>
-                        <input name="login_l" type="text" placeholder="Логин" />
-                        <input name="password_l" type="password" placeholder="Пароль" />
-                        <span>
-              <input type="checkbox" class="checkbox">
-              Сохранить мою сессию
-            </span>
-                        <button id="enter" type="submit" class="btn btn-default">Войти</button>
-
-
-                    </div><!--/login form-->
+                    {!! Form::open(['method'=>'post','url'=>'auth/login']) !!}
+                    <input name="username" type="text" placeholder="Логин"/>
+                    <input name="password" type="password" placeholder="Email"/>
+                    <button type="submit" id="entry" class="btn btn-default">Войти</button>
+                    {!! Form::close() !!}
                 </div>
                 <div class="col-sm-1">
                     <h2 class="or">ИЛИ</h2>
