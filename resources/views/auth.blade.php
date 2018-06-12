@@ -23,6 +23,7 @@
                             {!! Form::open(['method'=>'post','url'=>'auth/login']) !!}
                             <input name="name" type="text" placeholder="Логин"/>
                             <input name="password" type="password" placeholder="Email"/>
+                            <input name="remember" type="checkbox">Запомнить меня
                             <button type="submit" id="entry" class="btn btn-default">Войти</button>
                             {!! Form::close() !!}
                     </div>
