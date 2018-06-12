@@ -18,11 +18,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-sm-offset-1">
-                    {!! Form::open(['method'=>'post','url'=>'auth/login']) !!}
-                    <input name="username" type="text" placeholder="Логин"/>
-                    <input name="password" type="password" placeholder="Email"/>
-                    <button type="submit" id="entry" class="btn btn-default">Войти</button>
-                    {!! Form::close() !!}
+                    <div class="signup-form"><!--sign up form-->
+                        <h2>Создайте нового пользователя!</h2>
+                            {!! Form::open(['method'=>'post','url'=>'auth/login']) !!}
+                            <input name="username" type="text" placeholder="Логин"/>
+                            <input name="password" type="password" placeholder="Email"/>
+                            <button type="submit" id="entry" class="btn btn-default">Войти</button>
+                            {!! Form::close() !!}
+                    </div>
                 </div>
                 <div class="col-sm-1">
                     <h2 class="or">ИЛИ</h2>
