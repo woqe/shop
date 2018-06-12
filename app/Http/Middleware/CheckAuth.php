@@ -16,12 +16,8 @@ class CheckAuth
      */
     public function handle($request, Closure $next)
     {
-        if($request->user()){
-            return $next($request);
-        }
-        else{
-            redirect('auth');
-        }
+        $user = Auth::user();
+        return $user;
 
 
     }
