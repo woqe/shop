@@ -42,7 +42,7 @@ trait AuthenticatesUsers
         }
 
         if ($this->attemptLogin($request)) {
-            return $this->sendLoginResponse($request);
+            return redirect('/');
         }
 
         // If the login attempt was unsuccessful we will increment the number of attempts
@@ -62,7 +62,7 @@ trait AuthenticatesUsers
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string',
+            $this->username() => 'required|string',
             'password' => 'required|string',
         ]);
     }
@@ -104,7 +104,7 @@ trait AuthenticatesUsers
         $this->clearLoginAttempts($request);
 
         return $this->authenticated($request, $this->guard()->user())
-                ?: redirect('/');
+                ?: redirect()->intended($this->redirectPath());
     }
 
     /**
@@ -141,7 +141,7 @@ trait AuthenticatesUsers
      */
     public function username()
     {
-        return 'username';
+        return 'name';
     }
 
     /**
