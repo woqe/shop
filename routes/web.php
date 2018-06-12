@@ -19,7 +19,7 @@ Route::get('register', 'RegisterController@index');
 Route::post('register/new', 'RegisterController@store');
 Route::post('register/auth', 'RegisterController@store');
 
-Route::get('product/{id}', 'CategoryController@index')->middleware('auth.basic');
+Route::get('product/{id}', 'CategoryController@index');
 Route::get('product/{id}/{product}', 'ProductController@index');
 
 
